@@ -1,4 +1,4 @@
-## This repo is Forked from the original SAM-6D repository to rectify and deal with majority of the issues faced with the original repo. the setup.pu in `Pose_Estimation_Model/modelpointnet2/` location has been modified to deal with with pointnet2 model installation. Also, the `environment.yaml` file has been modified to work with latest CUDA version and also to deal with the CUDA mismatch errors. Also the model execution instructions were made clear w.r.t. input paths for the SAM-6D model.
+#### This repo is Forked from the original SAM-6D repository to rectify and deal with majority of the issues faced with the original repo. the setup.pu in `Pose_Estimation_Model/modelpointnet2/` location has been modified to deal with with pointnet2 model installation. Also, the `environment.yaml` file has been modified to work with latest CUDA version and also to deal with the CUDA mismatch errors. Also the model execution instructions were made clear w.r.t. input paths for the SAM-6D model.
 
 
 # <p align="center"> <font color=#008000>SAM-6D</font>: Segment Anything Model Meets Zero-Shot 6D Object Pose Estimation </p>
