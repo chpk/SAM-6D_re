@@ -1,0 +1,22 @@
+name: neatsam6d
+channels:
+  - xformers
+  - conda-forge
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  - pip
+  - python=3.9.6
+  - pip:
+    - torch==2.0.0
+    - torchvision==0.15.1
+    - fvcore
+    - xformers==0.0.18
+    - torchmetrics==0.10.3
+    - blenderproc==2.6.1
+    - opencv-python 
+    # ISM 
+    - omegaconf
+    - ruamel.yaml
+    - hydra-col

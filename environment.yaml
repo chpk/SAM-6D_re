@@ -1,0 +1,45 @@
+name: neatsam6d
+channels:
+  - defaults
+  - pytorch
+  - nvidia/label/cuda-12.1.0
+  - conda-forge
+dependencies:
+  - pip
+  - python=3.9
+  - nvidia/label/cuda-12.1.0::cuda
+  - nvidia/label/cuda-12.1.0::cuda-toolkit
+  - nvidia/label/cuda-12.1.0::cuda-nvrtc
+  - nvidia/label/cuda-12.1.0::cuda-tools
+  - nvidia/label/cuda-12.1.0::libcufile
+  - pytorch::pytorch-cuda=12.1
+  - pytorch::pytorch
+  - pytorch::torchvision
+  - pytorch::torchaudio
+  - conda-forge::torchmetrics
+  - pip:
+    - fvcore
+    - xformers
+    - blenderproc
+    - opencv-python
+    # ISM 
+    - omegaconf
+    - ruamel.yaml
+    - hydra-colorlog
+    - hydra-core
+    - gdown
+    - pandas
+    - imageio
+    - pyrender
+    - pytorch-lightning
+    - pycocotools
+    - distinctipy
+    - git+https://github.com/facebookresearch/segment-anything.git  # SAM
+    - ultralytics  # FastSAM
+    # PEM
+    - timm
+    - gorilla-core
+    - trimesh
+    - gpustat
+    - imgaug
+    - einops
