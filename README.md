@@ -1,3 +1,6 @@
+## This repo is Forked from the original SAM-6D repository to rectify and deal with majority of the issues faced with the original repo. the setup.pu in `Pose_Estimation_Model/modelpointnet2/` location has been modified to deal with with pointnet2 model installation. Also, the `environment.yaml` file has been modified to work with latest CUDA version and also to deal with the CUDA mismatch errors. Also the model execution instructions were made clear w.r.t. input paths for the SAM-6D model.
+
+
 # <p align="center"> <font color=#008000>SAM-6D</font>: Segment Anything Model Meets Zero-Shot 6D Object Pose Estimation </p>
 
 ####  <p align="center"> [Jiehong Lin](https://jiehonglin.github.io/), [Lihua Liu](https://github.com/foollh), [Dekun Lu](https://github.com/WuTanKun), [Kui Jia](http://kuijia.site/)</p>
@@ -7,12 +10,6 @@
 <p align="center">
   <img width="100%" src="https://github.com/JiehongLin/SAM-6D/blob/main/pics/vis.gif"/>
 </p>
-
-
-## News
-- [2024/03/07] We publish an updated version of our paper on [ArXiv](https://arxiv.org/abs/2311.15707).
-- [2024/02/29] Our paper is accepted by CVPR2024!
-
 
 ## Update Log
 - [2024/03/05] We update the demo to support [FastSAM](https://github.com/CASIA-IVA-Lab/FastSAM), you can do this by specifying `SEGMENTOR_MODEL=fastsam` in demo.sh.
@@ -35,27 +32,30 @@ In this work, we employ Segment Anything Model as an advanced starting point for
 ### 1. Preparation
 Please clone the repository locally:
 ```
-git clone https://github.com/JiehongLin/SAM-6D.git
+git clone https://github.com/chpk/SAM-6D_re.git 
 ```
 Install the environment and download the model checkpoints:
 ```
 cd SAM-6D
 sh prepare.sh
 ```
-We also provide a [docker image](https://hub.docker.com/r/lihualiu/sam-6d/tags) for convenience.
 
 ### 2. Evaluation on the custom data
 ```
 # set the paths
-export CAD_PATH=Data/Example/obj_000005.ply    # path to a given cad model(mm)
-export RGB_PATH=Data/Example/rgb.png           # path to a given RGB image
-export DEPTH_PATH=Data/Example/depth.png       # path to a given depth map(mm)
-export CAMERA_PATH=Data/Example/camera.json    # path to given camera intrinsics
-export OUTPUT_DIR=Data/Example/outputs         # path to a pre-defined file for saving results
+export CAD_PATH=    # absolute path to a given cad model(mm) at -- Data/Example/obj_000005.ply
+export RGB_PATH=          # absolute path to a given RGB image at -- Data/Example/rgb.png  
+export DEPTH_PATH=       # absolute path to a given depth map(mm) at -- Data/Example/depth.png
+export CAMERA_PATH=    # absolute path to given camera intrinsics in -- Data/Example/camera.json
+export OUTPUT_DIR=         # absolute path to a pre-defined file for saving results at -- Data/Example/outputs
 
 # run inference
+
+# be carefull with your blenderproc installation, if faced with any issue (typically 403 error), download the blender software and pass it's path using this additional argument --custom_blender_path
 cd SAM-6D
 sh demo.sh
+
+# all you results will be saved to Data/Example/outputs
 ```
 
 
@@ -69,17 +69,4 @@ If you find our work useful in your research, please consider citing:
     journal={arXiv preprint arXiv:2311.15707},
     year={2023}
     }
-
-
-## Contact
-
-If you have any questions, please feel free to contact the authors. 
-
-Jiehong Lin: [mortimer.jh.lin@gmail.com](mailto:mortimer.jh.lin@gmail.com)
-
-Lihua Liu: [lihualiu.scut@gmail.com](mailto:lihualiu.scut@gmail.com)
-
-Dekun Lu: [derkunlu@gmail.com](mailto:derkunlu@gmail.com)
-
-Kui Jia:  [kuijia@gmail.com](kuijia@gmail.com)
 
